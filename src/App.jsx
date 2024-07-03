@@ -8,6 +8,8 @@ import MovieView from '@/views/MovieView'
 import ProductView from '@/views/ProductView'
 import ProductDetailView from '@/views/ProductDetailView'
 import StoreView from '@/views/StoreView'
+import LoginView from '@/views/LoginView'
+import JoinView from '@/views/JoinView'
 
 const App = () => {
   return (
@@ -20,6 +22,8 @@ const App = () => {
         <Route path="/detail" element={ <ProductDetailView /> } />
         <Route path="/employee" element={ <EmployeeView /> } />
         <Route path="/store" element={ <StoreView /> } />
+        <Route path="/login" element={ <LoginView /> } />
+        <Route path="/join" element={ <JoinView /> } />
       </Route>
     </Routes>
   );

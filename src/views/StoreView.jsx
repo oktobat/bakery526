@@ -1,9 +1,10 @@
 import React from 'react';
+import Title from '@/components/common/Title'
 
 const StoreView = () => {
   return (
-    <div>
-      매장관리 페이지
+    <div className="row">
+      <Title title="매장관리" />
     </div>
   );
 };
