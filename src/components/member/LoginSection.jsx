@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
-import {useDispatch} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
 import {userLogin } from '@/store/member'
 import { useNavigate } from 'react-router-dom';
 
@@ -22,6 +22,8 @@ const LoginSectionBlock = styled.div`
 const LoginSection = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
+  const members = useSelector(state=>state.members.members)
+  
   const [userInfo, setUserInfo] = useState({
     userEmail : "",
     userPw : ""
@@ -34,9 +36,24 @@ const LoginSection = () => {
 
   const onLogin = (e)=>{
     e.preventDefault()
-    dispatch(userLogin(userInfo))
-    navigate("/")
+    if (!userInfo.userEmail) {
+      alert("이메일을 입력하세요.")
+      return
+    }
+    if (!userInfo.userPw) {
+      alert("비밀번호를 입력하세요.")
+      return
+    }
+    const user = members.find(item=>item.userEmail==userInfo.userEmail && item.userPw==userInfo.userPw)
+    if (user){
+      dispatch(userLogin(userInfo))
+      navigate("/")
+    } else {
+      alert("회원이 아닙니다.")
+      return
+    }
   }
+
 
   return (
     <LoginSectionBlock>

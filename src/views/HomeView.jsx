@@ -1,9 +1,14 @@
 import React from 'react';
+import MainSlide from '@/components/home/MainSlide'
+import MiniSlide from '@/components/home/MiniSlide'
+import NewArrival from '@/components/home/NewArrival'
 
 const HomeView = () => {
   return (
     <div>
-      메인페이지
+      <MainSlide />
+      <MiniSlide />
+      <NewArrival />
     </div>
   );
 };

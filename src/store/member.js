@@ -4,7 +4,7 @@ const memberSlice = createSlice({
   name : 'members',
   initialState : {
     members : [],  // [ {userEmail, userPw, userName, userPhone, zipCode, addr1, addr2}, ...]
-    logined : null
+    user : null   // {userEmail, userPw, userName, userPhone, zipCode, addr1, addr2}
   },
   reducers : {
     addMember(state, action){
@@ -12,15 +12,15 @@ const memberSlice = createSlice({
     },
     userLogin(state, action){
       const {userEmail, userPw} = action.payload
-      state.members.map((user)=>{
-        if (user.userEmail==userEmail && user.userPw==userPw) {
-          state.logined = user
-        }
-      })
+      const findUser = state.members.find(item=>item.userEmail==userEmail && item.userPw==userPw)
+      state.user = findUser ? findUser : null
+    },
+    userLogout(state, action){
+      state.user = null
     }
   }
 })
 
-export const { addMember, userLogin } = memberSlice.actions;
+export const { addMember, userLogin, userLogout } = memberSlice.actions;
 
 export default memberSlice.reducer;
