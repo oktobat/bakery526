@@ -5,18 +5,58 @@ const FooterBlock = styled.div`
   background:#454a56;
   padding:50px 0; 
   color:#fff;
+  @media screen and (max-width:1024px) {
+    padding-top:0px; 
+  }
   .row {
+    @media screen and (max-width:1200px) {
+      padding:0px 20px; 
+    }
+    @media screen and (max-width:1024px) {
+      padding:0px; 
+    }
     .company_nav {
       border-bottom:1px solid #fff; 
       padding-bottom:30px; 
       margin-bottom:30px; 
+      @media screen and (max-width:1024px) {
+        border-bottom:0px solid #fff; 
+        padding-bottom:0px; 
+      }
       a {
         margin-right:20px; 
         &:hover, &:focus { color:yellow }
+        @media screen and (max-width:1024px) {
+          display:block; 
+          border-bottom:1px solid #fff; 
+          margin-right:0px; 
+          padding:20px; 
+        }
       }
     }
     .company_info {
-      line-height:1.5em 
+      line-height:1.5em;
+      @media screen and (max-width:1024px) {
+        padding:0 20px;
+      }
+      span {
+        position:relative; 
+        padding-left:20px; 
+        &::before { 
+          content:'';
+          position:absolute;
+          top:5px; left:7px;
+          width:1px; 
+          height:12px;
+          background:#fff;
+        }
+      }
+      @media screen and (max-width:1024px){
+        span { display:block; 
+          padding-left:0px; 
+          &::before { display:none }
+        }
+      }
     }
   }
 `

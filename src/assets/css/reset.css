@@ -12,3 +12,6 @@ legend { display:none }
 .blind { position:absolute; width:1px; height:1px; overflow:hidden; text-indent:-99999px; }
 
 .row { max-width:1200px; margin:0 auto }
+@media screen and (max-width:1200px) {
+    .row { padding:0 20px; }
+}
