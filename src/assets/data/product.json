@@ -4,7 +4,7 @@
     "id" : 1001,
     "title" : "빵1",
     "price" : 1000,
-    "description" : "빵1 요약설명",
+    "description" : "빵1 요약<strong>설명</strong>",
     "image" : "./assets/image/bread1.png"
   },
   {
@@ -12,7 +12,7 @@
     "id" : 1002,
     "title" : "빵2",
     "price" : 1000,
-    "description" : "빵2 요약설명",
+    "description" : "빵2 요약<br />설명",
     "image" : "./assets/image/bread1.png"
   },
   {

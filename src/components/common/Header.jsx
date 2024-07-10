@@ -168,7 +168,7 @@ const Header = () => {
               <NavLink to="/employee">파바의 인재</NavLink>
             </li>
             <li>
-              <NavLink to="/movie">파바 매거진</NavLink>
+              <NavLink to="/movie">파바 무비</NavLink>
             </li>
             <li>
               <NavLink to="/product" onClick={ ()=>dispatch(onChangeCategory("all")) }>상품 안내</NavLink>
@@ -200,16 +200,16 @@ const Header = () => {
         <OtherNav>
           { !isUser ?
             <>
-              <NavLink to="/login">{ mobile ? <MdLogin /> : "로그인"}</NavLink>
-              <NavLink to="/join">{ mobile ? <MdGroupAdd /> : "회원가입"}</NavLink>
+              <NavLink to="/login" title="로그인">{ mobile ? <MdLogin /> : "로그인"}</NavLink>
+              <NavLink to="/join" title="회원가입">{ mobile ? <MdGroupAdd /> : "회원가입"}</NavLink>
             </>
             :
             <>
-              <a href="#none" onClick={ onLogout }>{ mobile ? <MdLogout /> : "로그아웃"}</a>
-              <NavLink to="/join">{mobile ? <FaUserEdit />:"정보수정"}</NavLink>
+              <a href="#none" onClick={ onLogout } title="로그아웃">{ mobile ? <MdLogout /> : "로그아웃"}</a>
+              <NavLink to="/join" title="정보수정">{mobile ? <FaUserEdit />:"정보수정"}</NavLink>
             </>
           }
-          <NavLink to="/cart">{ mobile ? <ItemCount><MdShoppingCart /><span>0</span></ItemCount> : "장바구니"}</NavLink>
+          <NavLink to="/cart" title="장바구니">{ mobile ? <ItemCount><MdShoppingCart /><span>0</span></ItemCount> : "장바구니"}</NavLink>
         </OtherNav>
       </div>
     </HeaderBlock>

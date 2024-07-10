@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components'
+import {Link} from 'react-router-dom'
 
 const NewArrivalBlock = styled.div`
   margin:100px auto; 
@@ -50,99 +51,99 @@ const NewArrival = () => {
   const products = [
     { 
       image:"./assets/image/new1.jpg",
-      name:"제주몽생이샌드1",
-      desc:"아주 맛있어요.",
+      title:"제주몽생이샌드1",
+      description:"아주 맛있어요.",
       comment:"1인당 5EA 구매 한정",
       price : 50000
     },
     { 
       image:"./assets/image/new2.jpg",
-      name:"제주몽생이샌드2",
-      desc:"아주 맛있어요.",
+      title:"제주몽생이샌드2",
+      description:"아주 맛있어요.",
       comment:"1인당 5EA 구매 한정",
       price : 50000
     },
     { 
       image:"./assets/image/new3.jpg",
-      name:"제주몽생이샌드3",
-      desc:"아주 맛있어요.",
+      title:"제주몽생이샌드3",
+      description:"아주 맛있어요.",
       comment:"1인당 5EA 구매 한정",
       price : 50000
     },
     { 
       image:"./assets/image/new4.png",
-      name:"제주몽생이샌드4",
-      desc:"아주 맛있어요.",
+      title:"제주몽생이샌드4",
+      description:"아주 맛있어요.",
       comment:"1인당 5EA 구매 한정",
       price : 50000
     },
     { 
       image:"./assets/image/new5.png",
-      name:"제주몽생이샌드5",
-      desc:"아주 맛있어요.",
+      title:"제주몽생이샌드5",
+      description:"아주 맛있어요.",
       comment:"1인당 5EA 구매 한정",
       price : 50000
     },
     { 
       image:"./assets/image/new6.jpg",
-      name:"제주몽생이샌드6",
-      desc:"아주 맛있어요.",
+      title:"제주몽생이샌드6",
+      description:"아주 맛있어요.",
       comment:"1인당 5EA 구매 한정",
       price : 50000
     },
     { 
       image:"./assets/image/new7.png",
-      name:"제주몽생이샌드7",
-      desc:"아주 맛있어요.",
+      title:"제주몽생이샌드7",
+      description:"아주 맛있어요.",
       comment:"1인당 5EA 구매 한정",
       price : 50000
     },
     { 
       image:"./assets/image/new1.jpg",
-      name:"제주몽생이샌드1",
-      desc:"아주 맛있어요.",
+      title:"제주몽생이샌드1",
+      description:"아주 맛있어요.",
       comment:"1인당 5EA 구매 한정",
       price : 50000
     },
     { 
       image:"./assets/image/new2.jpg",
-      name:"제주몽생이샌드2",
-      desc:"아주 맛있어요.",
+      title:"제주몽생이샌드2",
+      description:"아주 맛있어요.",
       comment:"1인당 5EA 구매 한정",
       price : 50000
     },
     { 
       image:"./assets/image/new3.jpg",
-      name:"제주몽생이샌드3",
-      desc:"아주 맛있어요.",
+      title:"제주몽생이샌드3",
+      description:"아주 맛있어요.",
       comment:"1인당 5EA 구매 한정",
       price : 50000
     },
     { 
       image:"./assets/image/new4.png",
-      name:"제주몽생이샌드4",
-      desc:"아주 맛있어요.",
+      title:"제주몽생이샌드4",
+      description:"아주 맛있어요.",
       comment:"1인당 5EA 구매 한정",
       price : 50000
     },
     { 
       image:"./assets/image/new5.png",
-      name:"제주몽생이샌드5",
-      desc:"아주 맛있어요.",
+      title:"제주몽생이샌드5",
+      description:"아주 맛있어요.",
       comment:"1인당 5EA 구매 한정",
       price : 50000
     },
     { 
       image:"./assets/image/new6.jpg",
-      name:"제주몽생이샌드6",
-      desc:"아주 맛있어요.",
+      title:"제주몽생이샌드6",
+      description:"아주 맛있어요.",
       comment:"1인당 5EA 구매 한정",
       price : 50000
     },
     { 
       image:"./assets/image/new7.png",
-      name:"제주몽생이샌드7",
-      desc:"아주 맛있어요.",
+      title:"제주몽생이샌드7",
+      description:"아주 맛있어요.",
       comment:"1인당 5EA 구매 한정",
       price : 50000
     }
@@ -155,11 +156,17 @@ const NewArrival = () => {
           products.map((item,index)=>(
             <LiBlock key={index}>
               <div className="imgBox">
-                <img src={item.image} alt={item.name} />
+                <Link to={`/product/${index}`} state={{item, index}}>
+                  <img src={item.image} alt={item.title} />
+                </Link>
               </div>
               <div className="infoBox">
-                <p style={{ fontSize:'18px'}}>{item.name}</p>
-                <p>{item.desc}</p>
+                <p style={{ fontSize:'18px'}}>
+                  <Link to={`/product/${index}`} state={{item, index}}>
+                    {item.title}
+                  </Link>
+                </p>
+                <p>{item.description}</p>
                 <p>{item.comment}</p>
                 <p><strong>{item.price.toLocaleString()}원</strong></p>
               </div>
