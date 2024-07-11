@@ -10,8 +10,7 @@ const MovieCategoryBlock = styled.div`
     &:hover, &.on { color: #fff; background: #00c183;  }
   }
 `
-const MovieCategory = () => {
-  const [changeType, setChangeType] = useState("인기 영화")
+const MovieCategory = ({changeType, categoryClick}) => {
   const movieType = [
     { name: '인기 영화',     media: 'movie',   type: 'popular' },
     { name: '현재 상영',     media: 'movie',   type: 'now_playing' },
@@ -26,7 +25,7 @@ const MovieCategory = () => {
         movieType.map((item, index)=>(
           <button key={index} type="button" 
           className={ changeType===item.name ? "on" : ""} 
-          onClick={ ()=>setChangeType(item.name)}
+          onClick={ ()=>categoryClick(item, 1)}
           >
             {item.name}
           </button>

@@ -4,6 +4,7 @@ import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import { IoIosArrowDropleftCircle, IoIosArrowDroprightCircle } from 'react-icons/io';
 
+
 const MiniSlideBlock = styled.div`
   position:relative; 
   padding:0 30px; 
@@ -15,19 +16,16 @@ const MiniSlideBlock = styled.div`
     &.slick-next { right:-30px } 
   }
 `
-
 const SlideContainer = styled.div`
   position: relative;
-`;
-
-const Image = styled.img`
-  width: 90%;
-  margin: 0 5%;
-  transition: all 0.5s;
+  img {
+    width:90%;
+    margin:0 5%;
+  }
 `;
 
 const MiniSlide = () => {
-  const [hoveredIndex, setHoveredIndex] = useState("");
+  const [currentImage, setCurrentImage] = useState(null)
   const sliders = [
     {image1:"./assets/image/main1.jpg", image2:"./assets/image/main2.jpg", alt:"매장판매"},
     {image1:"./assets/image/main3.jpg", image2:"./assets/image/main4.jpg", alt:"사전예약"},
@@ -67,12 +65,7 @@ const MiniSlide = () => {
         {
           sliders.map((item, index)=>(
             <SlideContainer key={index}>
-              <Image
-                src={ hoveredIndex===index ? item.image2 : item.image1 }
-                alt={item.alt}
-                onMouseOver={() => setHoveredIndex(index)}
-                onMouseOut={() => setHoveredIndex(null)}
-              />
+              <img src={currentImage==index? item.image2 : item.image1} alt={item.alt} onMouseOver={ ()=>setCurrentImage(index)} onMouseOut={ ()=>setCurrentImage(null)} />
             </SlideContainer>
           ))
         }

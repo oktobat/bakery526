@@ -27,7 +27,7 @@ const MovieSection = ({movies}) => {
         movies.map((item, index)=>(
           <ListBlock key={index}>
             <a href={`https://www.themoviedb.org/movie/${item.id}?language=ko`} target="_blank">
-              <img src={`https://www.themoviedb.org/t/p/w500/${item.poster_path}`} alt={item.title} />
+              <img src={`https://www.themoviedb.org/t/p/w500/${item.poster_path}`} alt={item.title} onError={ (e)=>{ e.target.onerror=null; e.target.src="./assets/image/new1.jpg"}} />
             </a>
             <p className="title">{item.title}</p>
             <p className="star">{item.vote_average.toFixed(1)}</p>
