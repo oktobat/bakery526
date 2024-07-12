@@ -18,11 +18,42 @@ const MiniSlideBlock = styled.div`
 `
 const SlideContainer = styled.div`
   position: relative;
-  img {
-    width:90%;
-    margin:0 5%;
-  }
 `;
+
+const Image = styled.img`
+  width:90%;
+  margin:0 5%;
+  transition:all 0.5s; 
+  opacity:${({ishovered})=>ishovered ? 1 : 0}
+`
+const HoverImage = styled.img`
+  position:absolute;
+  top:0; left:0; 
+  width:90%;
+  margin:0 5%;
+  transition:all 0.5s; 
+  opacity:${({ishovered})=>ishovered ? 0 : 1}
+`
+
+const CustomPrevArrow = (props) => {
+  const { className, onClick } = props;
+  return (
+    <IoIosArrowDropleftCircle
+      className={className}
+      onClick={onClick}
+    />
+  );
+};
+
+const CustomNextArrow = (props) => {
+  const { className, onClick } = props;
+  return (
+    <IoIosArrowDroprightCircle
+      className={className}
+      onClick={onClick}
+    />
+  );
+};
 
 const MiniSlide = () => {
   const [currentImage, setCurrentImage] = useState(null)
@@ -36,6 +67,7 @@ const MiniSlide = () => {
     {image1:"./assets/image/main5.jpg", image2:"./assets/image/main6.jpg", alt:"특별할인"},
     {image1:"./assets/image/main7.jpg", image2:"./assets/image/main8.jpg", alt:"파리올림픽"}
   ]
+
   const options = {
     dots:false,
     autoplay:true,
@@ -43,8 +75,8 @@ const MiniSlide = () => {
     slidesToShow:4,
     slidesToScroll:1,
     arrows:true,
-    prevArrow : <IoIosArrowDropleftCircle />,
-    nextArrow : <IoIosArrowDroprightCircle />,
+    prevArrow: <CustomPrevArrow />,
+    nextArrow: <CustomNextArrow />,
     responsive : [
       { breakpoint:1024,
         settings : {
@@ -65,7 +97,14 @@ const MiniSlide = () => {
         {
           sliders.map((item, index)=>(
             <SlideContainer key={index}>
-              <img src={currentImage==index? item.image2 : item.image1} alt={item.alt} onMouseOver={ ()=>setCurrentImage(index)} onMouseOut={ ()=>setCurrentImage(null)} />
+              <Image src={item.image1} 
+              ishovered={ currentImage==index ? "hover" : "" }
+              />
+              <HoverImage src={item.image2} 
+              onMouseOver={()=>setCurrentImage(index)}
+              onMouseOut={()=>setCurrentImage(null)}
+              ishovered={ currentImage==index ? "hover" : "" }
+              />
             </SlideContainer>
           ))
         }

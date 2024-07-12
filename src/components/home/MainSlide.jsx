@@ -56,6 +56,27 @@ const MainSlideBlock = styled.div`
 `
 
 const MainSlide = () => {
+  
+  const CustomPrevArrow = (props) => {
+    const { className, onClick } = props;
+    return (
+      <IoIosArrowDropleftCircle
+        className={className}
+        onClick={onClick}
+      />
+    );
+  };
+  
+  const CustomNextArrow = (props) => {
+    const { className, onClick } = props;
+    return (
+      <IoIosArrowDroprightCircle
+        className={className}
+        onClick={onClick}
+      />
+    );
+  };
+
   const options = {
     dots:true,
     autoplay:true,
@@ -63,8 +84,8 @@ const MainSlide = () => {
     slidesToShow:1,
     slidesToScroll:1,
     arrows:true,
-    prevArrow : <IoIosArrowDropleftCircle />,
-    nextArrow : <IoIosArrowDroprightCircle />,
+    prevArrow : <CustomPrevArrow />,
+    nextArrow : <CustomNextArrow />,
     responsive : [
       { breakpoint:1024,
         settings : {

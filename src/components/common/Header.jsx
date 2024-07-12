@@ -11,6 +11,7 @@ import { IoMdClose } from "react-icons/io";
 import { MdGroupAdd, MdLogin, MdLogout, MdShoppingCart } from "react-icons/md";
 import { FaUserEdit } from "react-icons/fa";
 import { useMediaQuery } from 'react-responsive'
+import Weather from '@/components/common/Weather'
 
 const HeaderBlock = styled.div`
   background:#023586;
@@ -23,6 +24,10 @@ const HeaderBlock = styled.div`
     @media screen and (max-width:1024px){
       display:block;
       h1 { padding:30px 0; }
+    }
+    .weather {
+      position:absolute; bottom:0; 
+      left:50%; transform:translateX(-50%);
     }
   }
 `
@@ -165,7 +170,7 @@ const Header = () => {
         <Nav className={ open ? "on" : ""}>
           <ul className="depth1">
             <li>
-              <NavLink to="/employee">파바의 인재</NavLink>
+              <NavLink to="/employee">전기차충전소</NavLink>
             </li>
             <li>
               <NavLink to="/movie">파바 무비</NavLink>
@@ -197,6 +202,9 @@ const Header = () => {
         <h1>
           <Link to="/">PARIS BAGUETTE</Link>
         </h1>
+        <div className="weather">
+          <Weather />
+        </div>
         <OtherNav>
           { !isUser ?
             <>

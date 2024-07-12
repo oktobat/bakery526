@@ -5,7 +5,9 @@ const PagenationBlock = styled.div`
   display:flex;
   justify-content: center; margin:50px 0; 
   .goend { background:#000; color:#fff; 
-    padding:5px 10px; margin:0 5px; }
+    padding:5px 10px; margin:0 5px; 
+    &:disabled { background:#555; cursor:default }
+  }
 `
 const PageBlock = styled.span`
   button { background:#ddd; margin:0 2px; 
@@ -16,7 +18,7 @@ const PageBlock = styled.span`
 const Pagenation = ({totalItems, itemsPerPage, currentPage, categoryClick, changeType, keyword, onSearch}) => {
   const pageList = []
   const totalPages = Math.ceil(totalItems / itemsPerPage);
-  const startPage = Math.max(1, currentPage - 5)
+  const startPage = Math.max(1, currentPage-5)
   const endPage = Math.min(totalPages, startPage + 9)
 
   for (let i=startPage; i<=endPage; i++) {
@@ -55,7 +57,7 @@ const Pagenation = ({totalItems, itemsPerPage, currentPage, categoryClick, chang
           ))
         }
       </PageBlock>
-      <button className="goend" onClick={nextPage} disabled={currentPage==pageList.length}>다음</button>
+      <button className="goend" onClick={nextPage} disabled={currentPage==totalPages}>다음</button>
     </PagenationBlock>
   );
 };
