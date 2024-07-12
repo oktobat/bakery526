@@ -35,6 +35,10 @@ const Weather = () => {
 
   useEffect(()=>{
     if (navigator.geolocation) {
+      // 사용자의 현재 위치를 비동기적으로 가져옴
+      // HTML5 Geolocation API에서 제공하는 기능
+      // showPosition : 위치 정보를 성공적으로 가져왔을때 호출되는 콜백함수(사용자가 허락하면 성공)
+      // showError : 위치 정보를 가져오는데 실패했을때 호출되는 콜백함수(사용자가 불허하면 실패)
       navigator.geolocation.getCurrentPosition(showPosition, showError);
     } else {
       setError('이 브라우저는 Geolocation을 지원하지 않습니다.');
