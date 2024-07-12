@@ -7,12 +7,42 @@ const WeatherBlock = styled.div``
 const Weather = () => {
   const myApiKey = "b22cc400a3b25ecf2837a48f16606d93"
   const [weather, setWeather]=useState({temp:0, mood:"", icon:""})
-  const [location, setLocation] = useState("김은영");
+  const [location, setLocation] = useState({lat:0, lon:0});
+
+  const showPosition = (position) => {
+    const { latitude, longitude } = position.coords;
+    setLocation({ lat:latitude, lon:longitude });
+  };
+  const showError = (error) => {
+    switch (error.code) {
+      case error.PERMISSION_DENIED:
+        setError('사용자가 위치 정보 제공을 거부했습니다.');
+        break;
+      case error.POSITION_UNAVAILABLE:
+        setError('위치 정보를 사용할 수 없습니다.');
+        break;
+      case error.TIMEOUT:
+        setError('위치 정보를 가져오는 요청이 시간 초과되었습니다.');
+        break;
+      case error.UNKNOWN_ERROR:
+        setError('알 수 없는 오류가 발생했습니다.');
+        break;
+      default:
+        setError('알 수 없는 오류가 발생했습니다.');
+        break;
+    }
+  };
+
   useEffect(()=>{
-    navigator.geolocation.getCurrentPosition()
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition, showError);
+    } else {
+      setError('이 브라우저는 Geolocation을 지원하지 않습니다.');
+    }
   }, [])
+  
   useEffect(()=>{
-    axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=37&lon=127&appid=${myApiKey}`)
+    axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${location.lat}&lon=${location.lon}&appid=${myApiKey}`)
     .then(res=>{
       console.log(res)
       let mood = res.data.weather[0].main
