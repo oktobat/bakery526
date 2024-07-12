@@ -7,7 +7,7 @@ const WeatherBlock = styled.div``
 const Weather = () => {
   const myApiKey = "b22cc400a3b25ecf2837a48f16606d93"
   const [weather, setWeather]=useState({temp:0, mood:"", icon:""})
-  const [location, setLocation] = useState(null);
+  const [location, setLocation] = useState("김은영");
   useEffect(()=>{
     navigator.geolocation.getCurrentPosition()
   }, [])
