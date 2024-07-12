@@ -7,6 +7,10 @@ const WeatherBlock = styled.div``
 const Weather = () => {
   const myApiKey = "b22cc400a3b25ecf2837a48f16606d93"
   const [weather, setWeather]=useState({temp:0, mood:"", icon:""})
+  const [location, setLocation] = useState(null);
+  useEffect(()=>{
+    navigator.geolocation.getCurrentPosition()
+  }, [])
   useEffect(()=>{
     axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=37&lon=127&appid=${myApiKey}`)
     .then(res=>{
