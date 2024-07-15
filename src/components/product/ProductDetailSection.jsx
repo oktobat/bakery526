@@ -35,7 +35,7 @@ const ProductDetailSection = ({item, index}) => {
         <Photo>
           {/* 개발중일때는 이미지경로 './assets/~' {`/${item.image}`} */}
           {/* build할때는 '/리포지토리명/./assets/~' {`/paris/${item.image}`} */}
-          <img src={`/${item.image}`} alt={item.title} />
+          <img src={`${item.image}`} alt={item.title} />
         </Photo>
         <Info>
           <p>상품번호 : {index}</p>

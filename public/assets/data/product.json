@@ -5,7 +5,7 @@
     "title" : "빵1",
     "price" : 1000,
     "description" : "빵1 요약<strong>설명</strong>",
-    "image" : "./assets/image/bread1.png"
+    "image" : "/assets/image/bread1.png"
   },
   {
     "category" : "bread",
@@ -13,7 +13,7 @@
     "title" : "빵2",
     "price" : 1000,
     "description" : "빵2 요약<br />설명",
-    "image" : "./assets/image/bread1.png"
+    "image" : "/assets/image/bread1.png"
   },
   {
     "category" : "bread",
@@ -21,7 +21,7 @@
     "title" : "빵3",
     "price" : 1000,
     "description" : "빵3 요약설명",
-    "image" : "./assets/image/bread1.png"
+    "image" : "/assets/image/bread1.png"
   },
   {
     "category" : "bread",
@@ -29,7 +29,7 @@
     "title" : "빵4",
     "price" : 1000,
     "description" : "빵4 요약설명",
-    "image" : "./assets/image/bread1.png"
+    "image" : "/assets/image/bread1.png"
   },
   {
     "category" : "bread",
@@ -37,7 +37,7 @@
     "title" : "빵5",
     "price" : 1000,
     "description" : "빵5 요약설명",
-    "image" : "./assets/image/bread1.png"
+    "image" : "/assets/image/bread1.png"
   },
   {
     "category" : "bread",
@@ -45,7 +45,7 @@
     "title" : "빵6",
     "price" : 1000,
     "description" : "빵6 요약설명",
-    "image" : "./assets/image/bread1.png"
+    "image" : "/assets/image/bread1.png"
   },
   {
     "category" : "bread",
@@ -53,7 +53,7 @@
     "title" : "빵7",
     "price" : 1000,
     "description" : "빵7 요약설명",
-    "image" : "./assets/image/bread1.png"
+    "image" : "/assets/image/bread1.png"
   },
   {
     "category" : "bread",
@@ -61,7 +61,7 @@
     "title" : "빵8",
     "price" : 1000,
     "description" : "빵8 요약설명",
-    "image" : "./assets/image/bread1.png"
+    "image" : "/assets/image/bread1.png"
   },
   {
     "category" : "bread",
@@ -69,7 +69,7 @@
     "title" : "빵9",
     "price" : 1000,
     "description" : "빵9 요약설명",
-    "image" : "./assets/image/bread1.png"
+    "image" : "/assets/image/bread1.png"
   },
   {
     "category" : "bread",
@@ -77,7 +77,7 @@
     "title" : "빵10",
     "price" : 1000,
     "description" : "빵10 요약설명",
-    "image" : "./assets/image/bread1.png"
+    "image" : "/assets/image/bread1.png"
   },
   {
     "category" : "cake",
@@ -85,7 +85,7 @@
     "title" : "케이크1",
     "price" : 1000,
     "description" : "케이크1 요약설명",
-    "image" : "./assets/image/cake1.jpg"
+    "image" : "/assets/image/cake1.jpg"
   },
   {
     "category" : "cake",
@@ -93,7 +93,7 @@
     "title" : "케이크2",
     "price" : 1000,
     "description" : "케이크2 요약설명",
-    "image" : "./assets/image/cake1.jpg"
+    "image" : "/assets/image/cake1.jpg"
   },
   {
     "category" : "cake",
@@ -101,7 +101,7 @@
     "title" : "케이크2",
     "price" : 1000,
     "description" : "케이크2 요약설명",
-    "image" : "./assets/image/cake1.jpg"
+    "image" : "/assets/image/cake1.jpg"
   },
   {
     "category" : "cake",
@@ -109,7 +109,7 @@
     "title" : "케이크3",
     "price" : 1000,
     "description" : "케이크3 요약설명",
-    "image" : "./assets/image/cake1.jpg"
+    "image" : "/assets/image/cake1.jpg"
   },
   {
     "category" : "cake",
@@ -117,7 +117,7 @@
     "title" : "케이크4",
     "price" : 1000,
     "description" : "케이크4 요약설명",
-    "image" : "./assets/image/cake1.jpg"
+    "image" : "/assets/image/cake1.jpg"
   },
   {
     "category" : "cake",
@@ -125,7 +125,7 @@
     "title" : "케이크5",
     "price" : 1000,
     "description" : "케이크5 요약설명",
-    "image" : "./assets/image/cake1.jpg"
+    "image" : "/assets/image/cake1.jpg"
   },
   {
     "category" : "cake",
@@ -133,7 +133,7 @@
     "title" : "케이크6",
     "price" : 1000,
     "description" : "케이크6 요약설명",
-    "image" : "./assets/image/cake1.jpg"
+    "image" : "/assets/image/cake1.jpg"
   },
   {
     "category" : "cake",
@@ -141,7 +141,7 @@
     "title" : "케이크7",
     "price" : 1000,
     "description" : "케이크7 요약설명",
-    "image" : "./assets/image/cake1.jpg"
+    "image" : "/assets/image/cake1.jpg"
   },
   {
     "category" : "cake",
@@ -149,7 +149,7 @@
     "title" : "케이크8",
     "price" : 1000,
     "description" : "케이크8 요약설명",
-    "image" : "./assets/image/cake1.jpg"
+    "image" : "/assets/image/cake1.jpg"
   },
   {
     "category" : "cake",
@@ -157,7 +157,7 @@
     "title" : "케이크9",
     "price" : 1000,
     "description" : "케이크9 요약설명",
-    "image" : "./assets/image/cake1.jpg"
+    "image" : "/assets/image/cake1.jpg"
   },
   {
     "category" : "cake",
@@ -165,7 +165,7 @@
     "title" : "케이크10",
     "price" : 1000,
     "description" : "케이크10 요약설명",
-    "image" : "./assets/image/cake1.jpg"
+    "image" : "/assets/image/cake1.jpg"
   },
   {
     "category" : "sandwitch",
@@ -173,7 +173,7 @@
     "title" : "샌드위치1",
     "price" : 1000,
     "description" : "샌드위치1 요약설명",
-    "image" : "./assets/image/sand1.jpg"
+    "image" : "/assets/image/sand1.jpg"
   },
   {
     "category" : "sandwitch",
@@ -181,7 +181,7 @@
     "title" : "샌드위치2",
     "price" : 1000,
     "description" : "샌드위치2 요약설명",
-    "image" : "./assets/image/sand1.jpg"
+    "image" : "/assets/image/sand1.jpg"
   },
   {
     "category" : "sandwitch",
@@ -189,7 +189,7 @@
     "title" : "샌드위치3",
     "price" : 1000,
     "description" : "샌드위치3 요약설명",
-    "image" : "./assets/image/sand1.jpg"
+    "image" : "/assets/image/sand1.jpg"
   },
   {
     "category" : "sandwitch",
@@ -197,7 +197,7 @@
     "title" : "샌드위치4",
     "price" : 1000,
     "description" : "샌드위치4 요약설명",
-    "image" : "./assets/image/sand1.jpg"
+    "image" : "/assets/image/sand1.jpg"
   },
   {
     "category" : "sandwitch",
@@ -205,7 +205,7 @@
     "title" : "샌드위치5",
     "price" : 1000,
     "description" : "샌드위치5 요약설명",
-    "image" : "./assets/image/sand1.jpg"
+    "image" : "/assets/image/sand1.jpg"
   },
   {
     "category" : "sandwitch",
@@ -213,7 +213,7 @@
     "title" : "샌드위치6",
     "price" : 1000,
     "description" : "샌드위치6 요약설명",
-    "image" : "./assets/image/sand1.jpg"
+    "image" : "/assets/image/sand1.jpg"
   },
   {
     "category" : "sandwitch",
@@ -221,7 +221,7 @@
     "title" : "샌드위치7",
     "price" : 1000,
     "description" : "샌드위치7 요약설명",
-    "image" : "./assets/image/sand1.jpg"
+    "image" : "/assets/image/sand1.jpg"
   },
   {
     "category" : "sandwitch",
@@ -229,7 +229,7 @@
     "title" : "샌드위치8",
     "price" : 1000,
     "description" : "샌드위치8 요약설명",
-    "image" : "./assets/image/sand1.jpg"
+    "image" : "/assets/image/sand1.jpg"
   },
   {
     "category" : "sandwitch",
@@ -237,7 +237,7 @@
     "title" : "샌드위치9",
     "price" : 1000,
     "description" : "샌드위치9 요약설명",
-    "image" : "./assets/image/sand1.jpg"
+    "image" : "/assets/image/sand1.jpg"
   },
   {
     "category" : "sandwitch",
@@ -245,6 +245,6 @@
     "title" : "샌드위치10",
     "price" : 1000,
     "description" : "샌드위치10 요약설명",
-    "image" : "./assets/image/sand1.jpg"
+    "image" : "/assets/image/sand1.jpg"
   }
 ]

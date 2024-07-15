@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components'
+import {NavLink} from 'react-router-dom'
 
 const FooterBlock = styled.div`
   background:#454a56;
@@ -25,7 +26,7 @@ const FooterBlock = styled.div`
       }
       a {
         margin-right:20px; 
-        &:hover, &:focus { color:yellow }
+        &:hover, &:focus, &.active { color:yellow }
         @media screen and (max-width:1024px) {
           display:block; 
           border-bottom:1px solid #fff; 
@@ -70,7 +71,7 @@ const Footer = () => {
           <a href="#none">이용약관</a>
           <a href="#none">개인정보처리방침</a>
           <a href="http://www.naver.com" target="_blank">사업자정보확인</a>
-          <a href="#none">공지사항</a>
+          <NavLink to="/boardList">공지사항</NavLink>
         </div>
         <div className="company_info">
           <p>회사명 : (주)파리바게트 <span>대표 : 이훈희, 이진성</span></p>
