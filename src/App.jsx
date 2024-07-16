@@ -12,6 +12,8 @@ import LoginView from '@/views/LoginView'
 import JoinView from '@/views/JoinView'
 import BoardListView from '@/views/BoardListView'
 import BoardWriteView from '@/views/BoardWriteView'
+import BoardDetailView from '@/views/BoardDetailView'
+import BoardModifyView from '@/views/BoardModifyView'
 
 const App = () => {
   return (
@@ -28,6 +30,8 @@ const App = () => {
         <Route path="/join" element={ <JoinView /> } />
         <Route path="/boardList" element={ <BoardListView /> } />
         <Route path="/boardWrite" element={ <BoardWriteView /> } />
+        <Route path="/boardDetail/:subject" element={ <BoardDetailView /> } />
+        <Route path="/boardModify/:subject" element={ <BoardModifyView /> } />
       </Route>
     </Routes>
   );

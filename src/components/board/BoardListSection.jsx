@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import styled from 'styled-components'
 import {Link} from 'react-router-dom'
 import {useSelector} from 'react-redux'
+import dayjs from 'dayjs'
 
 const BoardListBlock = styled.div`
   margin:0 0 50px; 
@@ -55,9 +56,9 @@ const BoardListSection = () => {
           { notice.length>0 && notice.map((item, index)=>(
               <tr key={index}>
                 <td>{notice.length-index}</td>
-                <td>{item.subject}</td>
+                <td><Link to={`/boardDetail/${item.subject}`} state={{ item:item }}>{item.subject}</Link></td>
                 <td>{item.writer}</td>
-                <td>{item.date}</td>
+                <td>{dayjs(item.date).format('YYYY-MM-DD')}</td>
                 <td>{item.hit}</td>
               </tr>
           ))

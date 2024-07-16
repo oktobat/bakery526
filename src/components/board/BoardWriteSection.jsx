@@ -50,8 +50,7 @@ const BoardWriteSection = () => {
       contentRef.current.focus()
       return
     }
-    const date = new Date()
-    const newNotice = {...board, date:dayjs(date).format("YYYY-MM-DD"), hit:0}
+    const newNotice = {...board, date:Date.now(), hit:0}
     dispatch(initNotice(newNotice))
     navigate("/boardList")
   }
