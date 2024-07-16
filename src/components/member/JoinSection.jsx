@@ -1,6 +1,6 @@
 import React, {useState, useRef, useEffect} from 'react';
 import styled from 'styled-components'
-import {useDispatch} from "react-redux"
+import {useDispatch, useSelector} from "react-redux"
 import {useNavigate} from 'react-router-dom'
 import { addMember } from "@/store/member"
 
@@ -21,6 +21,7 @@ const JoinSectionBlock = styled.div`
 `
 
 const JoinSection = () => {
+  const members = useSelector(state=>state.members.members)
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const userEmailRef = useRef("")
@@ -40,10 +41,19 @@ const JoinSection = () => {
     addr2 : ""
   })
 
+  const [message, setMessage] = useState("")
   const handleChange = (e)=>{
     console.log(e.target)
     const {value, name } = e.target
     setUserInfo(userInfo=>({...userInfo, [name]:value}))
+  }
+  const idCheck = (value)=>{
+    const index = members.findIndex(member=>member.userEmail==value)
+    if (index==-1) {
+      setMessage("가능한 계정입니다.")
+    } else {
+      setMessage("중복된 계정입니다.")
+    }
   }
 
   const onReset = ()=>{
@@ -133,12 +143,14 @@ const JoinSection = () => {
           <tbody>
             <tr>
               <td>이메일 중복체크 : </td>
-              <td></td>
+              <td>{message}</td>
             </tr>
             <tr>
               <td><label htmlFor="userEmail">이메일 : </label></td>
               <td>
-                <input ref={userEmailRef} type="text" id="userEmail" name="userEmail" value={userInfo.userEmail} onChange={ handleChange } />
+                <input ref={userEmailRef} type="text" id="userEmail" 
+                name="userEmail" value={userInfo.userEmail} 
+                onChange={ (e)=>{handleChange(e); idCheck(e.target.value)} } />
               </td>
             </tr>
             <tr>
